@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Natural Language Processing</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="static/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="static/css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+
+	function lowercase() {
+	var text= $('#lowercase_text').val();
+	  $.ajax({
+				  url: "/lower",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".lowercase").append(html);
+				});
+	};
+
+	function sent_tokenize() {
+	var text= $('#sent_tokenize_text').val();
+	  $.ajax({
+				  url: "/sent_tokenize",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".sent_tokenize").append(html);
+				});
+	};
+
+	function word_tokenize() {
+	var text= $('#word_tokenize_text').val();
+	  $.ajax({
+				  url: "/word_tokenize",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".word_tokenize").append(html);
+				});
+	};
+
+	function spell_check() {
+	var text= $('#spell_check_text').val();
+	  $.ajax({
+				  url: "/spell_check",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".spell_check").append(html);
+				});
+	};
+
+	function lemmatize() {
+	var text= $('#lemmatize_text').val();
+	  $.ajax({
+				  url: "/lemmatize",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".lemmatize").append(html);
+				});
+	};
+
+	function stemming() {
+	var text= $('#stemming_text').val();
+	  $.ajax({
+				  url: "/stemming",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".stemming").append(html);
+				});
+	};
+
+	function remove_tags() {
+	var text= $('#remove_tags_text').val();
+	  $.ajax({
+				  url: "/remove_tags",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".remove_tags").append(html);
+				});
+	};
+
+	function remove_numbers() {
+	var text= $('#remove_numbers_text').val();
+	  $.ajax({
+				  url: "/remove_numbers",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".remove_numbers").append(html);
+				});
+	};
+
+	function remove_punct() {
+	var text= $('#remove_punct_text').val();
+	  $.ajax({
+				  url: "/remove_punct",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".remove_punct").append(html);
+				});
+	};
+
+	function remove_stopwords() {
+	var text= $('#remove_stopwords_text').val();
+	  $.ajax({
+				  url: "/remove_stopwords",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".remove_stopwords").append(html);
+				});
+	};
+
+  	</script>
+
+	</head>
+	<body>
+	<div id="fh5co-page">
+		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+
+			<nav id="fh5co-main-menu" role="navigation">
+				<ul>
+					<li class="fh5co-active"><a href="home">Home</a></li>
+					<li><a href="preproc">PRE-PROCESSING</a></li>
+					<li><a href="keyExt">Keyword Extraction</a></li>
+					<li><a href="summary">Summarization</a></li>
+					<li><a href="installation">Installation</a></li>
+				</ul>
+			</nav>
+
+			<div class="fh5co-footer">
+				<p><small>&copy; 2019 Yash Bajaj</span> <br><span>Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> </span></small></p>
+				<ul>
+					<li><a href="https://github.com/yash42828" target="_blank"><img src="static/images/github_icon.png" alt="github_icon" width="20" height="20"></a></li>
+					<li><a href="https://twitter.com/Yashbaj56206964" target="_blank"><img src="static/images/twitter.png" alt="medium_icon" width="20" height="20"></a></li>
+					<li><a href="https://www.linkedin.com/in/yash-bajaj-a50013123/" target="_blank"><img src="static/images/linkedin_icon.png" alt="linkedin_icon" width="20" height="20"></a></li>
+				</ul>
+			</div>
+
+		</aside>
+
+		<div id="fh5co-main">
+
+			<div class="fh5co-narrow-content">
+				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Text Pre-Processing</h2>
+				<p>
+					So are you planning to do a research in text fields but not sure about how to start?<br>
+
+					Well, why not start with pre-processing of text as it is very important while doing
+					research in text field and its easy! Cleaning the text helps you get quality output by removing
+					all irrelevant text and getting the forms of the words etc.
+				</p>
+			</div>
+
+
+			
+
+
+			<div class="fh5co-testimonial" >
+				<div class="fh5co-narrow-content">
+					<div class="owl-carousel-fullwidth animate-box" data-animate-effect="fadeInLeft">
+						<table>
+							
+							<tr>
+								<td>1</td>
+								<td>Converting text to lowercase (eg: "I AM YASH")</td>
+								<td><input type="text" id="lowercase_text"></td>
+								<td><button id="lowercase_clicked" onclick="lowercase()">Submit</button><br></td>
+								<td class="lowercase"></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Sentence tokenize(eg: "I'm Yash. This is a test.")</td>
+								<td><input type="text" id="sent_tokenize_text"></td>
+								<td><button id="sent_tokenize_clicked" onclick="sent_tokenize()">Submit</button><br></td>
+								<td class="sent_tokenize"></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Word tokenize (eg: "I AM Yash")</td>
+								<td><input type="text" id="word_tokenize_text" ></td>
+								<td><button id="word_tokenize_clicked" onclick="word_tokenize()">Submit</button><br></td>
+								<td class="word_tokenize"></td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Spell Check(eg: "Thss is a test") </td>
+								<td><input type="text" id="spell_check_text"></td>
+								<td><button id="spell_check_clicked" onclick="spell_check()">Submit</button><br></td>
+								<td class="spell_check"></td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Lemmatize (eg: "the functions of this fan")</td>
+								<td><input type="text" id="lemmatize_text" ></td>
+								<td><button id="lemmatize_clicked" onclick="lemmatize()">Submit</button><br></td>
+								<td class="lemmatize"></td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>Stemming(eg: "test functioning")</td>
+								<td><input type="text" id="stemming_text"></td>
+								<td><button id="stemming_clicked" onclick="stemming()">Submit</button><br></td>
+								<td class="stemming"></td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>Remove Tags (eg: "this <\test> tag")</td>
+								<td><input type="text" id="remove_tags_text" ></td>
+								<td><button id="remove_tags_clicked" onclick="remove_tags()">Submit</button><br></td>
+								<td class="remove_tags"></td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>Remove numbers (eg: "test 1243")</td>
+								<td><input type="text" id="remove_numbers_text"></td>
+								<td><button id="remove_numbers_clicked" onclick="remove_numbers()">Submit</button><br></td>
+								<td class="remove_numbers"></td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>Remove punctuation (eg: "test this! or $")</td>
+								<td><input type="text" id="remove_punct_text"></td>
+								<td><button id="remove_punct_clicked" onclick="remove_punct()">Submit</button><br></td>
+								<td class="remove_punct"></td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>Remove stopwords (eg: "all kinds of things")</td>
+								<td><input type="text" id="remove_stopwords_text"></td>
+								<td><button id="remove_stopwords_clicked" onclick="remove_stopwords()">Submit</button><br></td>
+								<td class="remove_stopwords"></td>
+							</tr>
+						</table>
+					</div>
+		          </div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Counters -->
+	<script src="js/jquery.countTo.js"></script>
+	
+	
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+
