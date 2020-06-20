@@ -19,5 +19,4 @@ it will give a link to open<br>
 click and the web app will be open in your Web browser.
 
 <br>
-# Creating a Flask Website for NLP <br>
 
