@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('index.html')
+    return render_template('index.html') #it will render the home page of web application
 
 
 @app.route('/keyExt', methods=["GET"])
@@ -44,7 +44,7 @@ def lower_case():
         "result": word
     }
     result = {str(key): value for key, value in result.items()}
-    return jsonify(result=result)
+    return jsonify(result=result) #converting into JSON format
 
 @app.route('/sent_tokenize', methods=["GET", "POST"])
 def sent_tokenize():
