@@ -16,4 +16,4 @@
 7. Go to terminal / command prompt and press ctrl + c to stop the project.
 ```
 
-# Feel Free to contact! If you have any doubts.
+## Feel Free to contact! If you have any doubts.
